@@ -9,6 +9,8 @@
 <p align="center">
   <a href="https://github.com/tulai-design/cueline-releases/releases/latest/download/CueLine-mac-arm64.dmg"><b>下载 macOS 版（Apple 芯片）</b></a>
   ·
+  <a href="https://github.com/tulai-design/cueline-releases/releases/latest/download/CueLine-win-x64-setup.exe"><b>下载 Windows 版（64 位）</b></a>
+  ·
   <a href="https://fm.tulai.design">官网</a>
   ·
   <a href="https://github.com/tulai-design/cueline-releases/releases">所有版本</a>
@@ -16,7 +18,7 @@
 
 ---
 
-CueLine 是一台做播客和电台节目的桌面工作台。一集节目从原稿开始，经过口播稿、声音、剪辑，最后导出成片，五个工位都在一个窗口里。资料库存在你自己的电脑上。
+CueLine 是一台做播客和电台节目的桌面工作台，macOS 和 Windows 都能用。一集节目从原稿开始，经过口播稿、声音、剪辑，最后导出成片，五个工位都在一个窗口里。资料库存在你自己的电脑上。
 
 > 现在是**测试版**：功能还在补，界面和数据格式可能会变。遇到问题请在这个仓库 [提 Issue](https://github.com/tulai-design/cueline-releases/issues)。
 
@@ -24,8 +26,9 @@ CueLine 是一台做播客和电台节目的桌面工作台。一集节目从原
 
 - [五个工位](#五个工位)
 - [系统要求](#系统要求)
-- [安装](#安装)
-- [第一次打开](#第一次打开)
+- [安装（macOS）](#安装macos)
+- [第一次打开（macOS）](#第一次打开macos)
+- [安装和第一次打开（Windows）](#安装和第一次打开windows)
 - [更新](#更新)
 - [账号和积分](#账号和积分)
 - [你的数据在哪里](#你的数据在哪里)
@@ -50,24 +53,24 @@ CueLine 是一台做播客和电台节目的桌面工作台。一集节目从原
 
 | 项目 | 要求 |
 | --- | --- |
-| 系统 | macOS 13 Ventura 或更新 |
-| 芯片 | Apple 芯片（M1 及以后）。Intel Mac 的版本还没有 |
+| macOS | 13 Ventura 或更新，Apple 芯片（M1 及以后）。Intel Mac 的版本还没有 |
+| Windows | Windows 10 或 11，64 位。需要 WebView2（Windows 11 自带；Windows 10 没有的话安装时会自动下载） |
 | 网络 | 写稿、录音、剪辑、导出不用联网；AI 功能和登录要联网 |
 | 麦克风 | 录音时要用，第一次录音会问你要权限 |
-| 空间 | 安装包约 12 MB；录音和素材另算，存在你的资料库里 |
+| 空间 | 安装包十几 MB；录音和素材另算，存在你的资料库里 |
 
-Windows 版还在准备。
-
-## 安装
+## 安装（macOS）
 
 1. 下载 [CueLine-mac-arm64.dmg](https://github.com/tulai-design/cueline-releases/releases/latest/download/CueLine-mac-arm64.dmg)
 2. 双击打开下载好的 dmg，会出现一个小窗口
 3. 把 CueLine 拖进「应用程序」
 4. 推出 dmg（在访达侧边栏点它旁边的 ⏏），dmg 文件可以删掉了
 
-## 第一次打开
+## 第一次打开（macOS）
 
 测试版**还没有经过 Apple 的签名和公证**，第一次打开时 macOS 会拦一下。任选一种方法放行，之后就不会再问：
+
+第一次打开时，CueLine 会先说明它要把节目存在「文稿/CueLine」里，点「允许访问文稿」后 macOS 会再问一次，点「好」。
 
 **方法一：右键打开**
 
@@ -91,15 +94,24 @@ xattr -dr com.apple.quarantine /Applications/CueLine.app
 
 然后再按上面的方法一打开。
 
+## 安装和第一次打开（Windows）
+
+1. 下载 [CueLine-win-x64-setup.exe](https://github.com/tulai-design/cueline-releases/releases/latest/download/CueLine-win-x64-setup.exe)
+2. 双击运行。测试版还没有代码签名，Windows 会弹出蓝色的「Windows 已保护你的电脑」：点「**更多信息**」，再点「**仍要运行**」
+3. 按提示装好。装在当前用户下，不用管理员权限；开始菜单和桌面上会有 CueLine
+4. 打开 CueLine，资料库在「文档\CueLine」
+
+浏览器（Edge、Chrome）下载时如果提示「不常下载」「可能有害」，选「保留」。
+
 ## 更新
 
 测试版还没有自动更新。出了新版本：
 
-1. 到 [Releases](https://github.com/tulai-design/cueline-releases/releases) 下载最新的 dmg
+1. 到 [Releases](https://github.com/tulai-design/cueline-releases/releases) 下载最新的安装包
 2. 退出 CueLine
-3. 把新的 CueLine 拖进「应用程序」，选「替换」
+3. macOS：把新的 CueLine 拖进「应用程序」，选「替换」。Windows：直接运行新的安装程序，会装在原来的位置
 
-资料库不会受影响，原来的稿子、录音、剪辑都还在。替换以后第一次打开可能又要按 [第一次打开](#第一次打开) 放行一次。
+资料库不会受影响，原来的稿子、录音、剪辑都还在。macOS 上替换以后第一次打开，可能又要右键「打开」放行一次。
 
 想第一时间知道新版本：在这个仓库右上角点 **Watch → Custom → Releases**。
 
@@ -114,7 +126,7 @@ xattr -dr com.apple.quarantine /Applications/CueLine.app
 
 ## 你的数据在哪里
 
-所有稿子、录音、剪辑工程都在你自己电脑的 **文稿/CueLine** 文件夹里：
+所有稿子、录音、剪辑工程都在你自己电脑的 **文稿/CueLine**（Windows 是「文档\CueLine」）文件夹里：
 
 | 位置 | 是什么 |
 | --- | --- |
@@ -136,9 +148,17 @@ xattr -dr com.apple.quarantine /Applications/CueLine.app
 
 ## 卸载
 
+**macOS**
+
 1. 把「应用程序」里的 CueLine 拖进废纸篓
 2. 想连资料一起删：再删掉 `文稿/CueLine`（**删了就找不回来**，先确认不要了）
 3. 登录信息存在钥匙串里：打开「钥匙串访问」，搜 `app.cueline.desktop` 删掉
+
+**Windows**
+
+1. 设置 → 应用 → 已安装的应用，找到 CueLine →「卸载」
+2. 想连资料一起删：再删掉「文档\CueLine」（**删了就找不回来**）
+3. 登录信息存在凭据管理器里：控制面板 → 凭据管理器 → Windows 凭据，找到 `app.cueline.desktop` 删掉
 
 ## 常见问题
 
@@ -167,9 +187,15 @@ xattr -dr com.apple.quarantine /Applications/CueLine.app
 </details>
 
 <details>
-<summary><b>支持 Intel Mac、Windows 吗</b></summary>
+<summary><b>支持 Intel Mac、Windows on ARM 吗</b></summary>
 
-还没有。现在只有 Apple 芯片的 Mac 版，Windows 版在准备。
+还没有。现在是 Apple 芯片的 Mac 版和 64 位（x64）的 Windows 版。
+</details>
+
+<details>
+<summary><b>Windows 上录音没有声音</b></summary>
+
+打开 设置 → 隐私和安全性 → 麦克风，确认「允许应用访问麦克风」和「允许桌面应用访问麦克风」都开着。
 </details>
 
 <details>
@@ -182,10 +208,13 @@ xattr -dr com.apple.quarantine /Applications/CueLine.app
 
 每个版本的改动写在 [Releases](https://github.com/tulai-design/cueline-releases/releases) 里。版本号是 `主.次.修订`；带 `-beta` 这类后缀的是预览版。
 
-每个 Release 里附了安装包的 SHA-256，想核对可以在终端里：
+每个 Release 里附了安装包的 SHA-256，想核对：
 
 ```sh
+# macOS
 shasum -a 256 ~/Downloads/CueLine-mac-arm64.dmg
+# Windows（PowerShell）
+Get-FileHash $HOME\Downloads\CueLine-win-x64-setup.exe -Algorithm SHA256
 ```
 
 ---
